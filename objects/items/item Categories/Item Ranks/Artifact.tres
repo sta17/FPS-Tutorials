@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemCategory" load_steps=2 format=3 uid="uid://dlre8gfk7vhy6"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="1_x60ql"]
+
+[resource]
+script = ExtResource("1_x60ql")
+name = "Artifact"
+color = Color(1, 0.54902, 0, 1)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://brv2pft5qcu5k"]
+
+[ext_resource type="PackedScene" uid="uid://bx508ihnmkysh" path="res://assets/models/Public Domain/Kenney/Space/terrain.glb" id="1_ajpi3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mvq7m"]
+size = Vector3(1, 0.25, 1)
+
+[node name="terrain2" instance=ExtResource("1_ajpi3")]
+
+[node name="terrain" parent="tmpParent" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tmpParent/terrain" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent/terrain/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125303, 0)
+shape = SubResource("BoxShape3D_mvq7m")

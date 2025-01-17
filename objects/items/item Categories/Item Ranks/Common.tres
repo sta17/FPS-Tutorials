@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemCategory" load_steps=2 format=3 uid="uid://bcwrv1tdjmf7r"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="1_i73vn"]
+
+[resource]
+script = ExtResource("1_i73vn")
+name = "Common"
+color = Color(1, 1, 1, 1)

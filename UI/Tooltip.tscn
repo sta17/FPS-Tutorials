@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgcqw8o03yyyp"]
+
+[ext_resource type="Script" path="res://UI/tooltip.gd" id="1_xxf41"]
+[ext_resource type="Texture2D" uid="uid://c2g1b60wlea7n" path="res://assets/Icons/Stevens/UI/Frame Original 64.png" id="2_7nees"]
+[ext_resource type="LabelSettings" uid="uid://c51pu1gso1pjt" path="res://godot Style Elements/BlackAndWhite12px.tres" id="3_d8ep4"]
+[ext_resource type="LabelSettings" uid="uid://xi4omuyfdhj2" path="res://godot Style Elements/BlackAndWhite8px.tres" id="4_deewc"]
+[ext_resource type="LabelSettings" uid="uid://ck5v4mloaeokv" path="res://godot Style Elements/Gold10px.tres" id="5_xr36n"]
+[ext_resource type="LabelSettings" uid="uid://cth47f8nrvdf3" path="res://godot Style Elements/Sandy8px.tres" id="6_sp0ho"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fedme"]
+font_size = 10
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Tooltip" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 120.0
+script = ExtResource("1_xxf41")
+
+[node name="Anchor" type="Control" parent="."]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Anchor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7nees")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="Anchor/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="GridContainer" type="GridContainer" parent="Anchor/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Tooltip_Name" type="Label" parent="Anchor/NinePatchRect/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Item Name Her"
+label_settings = ExtResource("3_d8ep4")
+
+[node name="Tooltip_Rank" type="Label" parent="Anchor/NinePatchRect/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Rank"
+label_settings = SubResource("LabelSettings_fedme")
+
+[node name="Tooltip_Properties" type="Label" parent="Anchor/NinePatchRect/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Item Name Here"
+label_settings = ExtResource("4_deewc")
+
+[node name="Tooltip_Lore_Title" type="Label" parent="Anchor/NinePatchRect/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Lore"
+label_settings = ExtResource("5_xr36n")
+
+[node name="Tooltip_Lore_Desc" type="Label" parent="Anchor/NinePatchRect/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "S"
+label_settings = ExtResource("6_sp0ho")

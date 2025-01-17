@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb0r7orjwp3q4"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/ui/inventoryUI.gd" id="1_ju1o2"]
+[ext_resource type="PackedScene" uid="uid://bqxargohrrmda" path="res://addons/inventory-system/ui/slotUI.tscn" id="2_s4cay"]
+[ext_resource type="LabelSettings" uid="uid://ceyvq7ladbtbe" path="res://godot Style Elements/BlackAndWhite16px.tres" id="3_c58td"]
+[ext_resource type="Texture2D" uid="uid://c2g1b60wlea7n" path="res://assets/Icons/Stevens/UI/Frame Original 64.png" id="3_x8ruk"]
+
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("slots_container")]
+texture_filter = 1
+custom_minimum_size = Vector2(468, 260)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -130.0
+offset_right = 234.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ju1o2")
+slot_ui_scene = ExtResource("2_s4cay")
+slots_container = NodePath("Control/MarginContainer/ScrollContainer/GridContainer")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_x8ruk")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 24.0
+offset_right = 4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_x8ruk")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 460.0
+offset_bottom = 232.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -24.0
+offset_right = 116.0
+offset_bottom = 2.0
+text = "Inventory"
+label_settings = ExtResource("3_c58td")

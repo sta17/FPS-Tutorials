@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b411hfkru5vs7"]
+
+[ext_resource type="PackedScene" uid="uid://b2p7bbkuxf7m" path="res://assets/models/Public Domain/Kenney/Starter Kits/blaster.glb" id="1_yqvvx"]
+
+[node name="blaster" instance=ExtResource("1_yqvvx")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="blaster2" parent="." index="0"]
+layers = 2

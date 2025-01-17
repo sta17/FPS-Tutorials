@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=7 format=3 uid="uid://c8iatjwh0fjvw"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="1_o4n4s"]
+[ext_resource type="Resource" uid="uid://dhinqq0melrsh" path="res://objects/items/item Categories/weapons.tres" id="2_gbghb"]
+[ext_resource type="Texture2D" uid="uid://dart5em2dk64d" path="res://assets/Icons/Buch's RPG Items/sword.png" id="2_xieum"]
+[ext_resource type="Resource" uid="uid://cjfoegl57ece7" path="res://objects/items/item Categories/MainHand.tres" id="3_t355w"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory_item.gd" id="3_v6woy"]
+[ext_resource type="Resource" uid="uid://nr3l60ndhvdy" path="res://objects/items/item Categories/Item Ranks/Unique.tres" id="4_cqg7r"]
+
+[resource]
+script = ExtResource("3_v6woy")
+id = 2
+max_stack = 1
+name = "Bottle"
+icon = ExtResource("2_xieum")
+lore = "A Sword of Renown"
+rank = ExtResource("4_cqg7r")
+properties = {
+"dropped_item_model": "res://objects/Modified Assets/Can_B_Red.tscn"
+}
+categories = Array[ExtResource("1_o4n4s")]([ExtResource("2_gbghb"), ExtResource("3_t355w")])

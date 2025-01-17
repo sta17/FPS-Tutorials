@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://r72al2beo105"]
+
+[ext_resource type="Script" path="res://objects/CameraAndCharacterSystems/Third Person Experiment/CameraController.gd" id="1_7a7qu"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wophf"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 10.0
+
+[node name="CameraController" type="Node3D" groups=["CameraController"]]
+script = ExtResource("1_7a7qu")
+sensitivity = 4
+
+[node name="LookAt" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 10)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+collision_mask = 4
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+
+[node name="RayCast" type="RayCast3D" parent="SpringArm3D/Camera3D"]
+exclude_parent = false
+target_position = Vector3(0, 0, -10)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpringArm3D/Camera3D/RayCast"]
+transform = Transform3D(1, -1.42109e-14, 0, 0, -4.37114e-08, -1, 1.42109e-14, 1, -4.37114e-08, 8.815e-07, -0.391921, -5.80984)
+mesh = SubResource("CylinderMesh_wophf")

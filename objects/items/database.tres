@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryDatabase" load_steps=8 format=3 uid="uid://bl8xujlnad0mw"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="1_hoc22"]
+[ext_resource type="Resource" path="res://objects/items/item Categories/Consumables.tres" id="2_k734n"]
+[ext_resource type="Resource" uid="uid://dhinqq0melrsh" path="res://objects/items/item Categories/weapons.tres" id="3_wcbv7"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory_item.gd" id="4_gflvi"]
+[ext_resource type="Resource" uid="uid://cymey3vniyice" path="res://objects/items/bottle.tres" id="5_w3m2r"]
+[ext_resource type="Resource" uid="uid://c8iatjwh0fjvw" path="res://objects/items/grand Sword.tres" id="6_vecw3"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory_database.gd" id="7_tohqv"]
+
+[resource]
+script = ExtResource("7_tohqv")
+items = Array[ExtResource("4_gflvi")]([ExtResource("5_w3m2r"), ExtResource("6_vecw3")])
+item_categories = Array[ExtResource("1_hoc22")]([ExtResource("2_k734n"), ExtResource("3_wcbv7")])

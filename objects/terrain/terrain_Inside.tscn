@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuvmxcexvcxem"]
+
+[ext_resource type="PackedScene" uid="uid://cjjb622scc63g" path="res://assets/models/Public Domain/Kenney/Space Station/floor.glb" id="1_sy58k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3f52m"]
+size = Vector3(1, 0.3, 1)
+
+[node name="floor2" instance=ExtResource("1_sy58k")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_3f52m")

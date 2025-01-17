@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemCategory" load_steps=3 format=3 uid="uid://cmspu8poxd67w"]
+
+[ext_resource type="Texture2D" uid="uid://dfivlnqwdi8jn" path="res://assets/Icons/Stevens/UI/Shield.png" id="1_pt8n4"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="2_1whpk"]
+
+[resource]
+script = ExtResource("2_1whpk")
+name = "Shield"
+color = Color(1, 1, 1, 1)
+icon = ExtResource("1_pt8n4")

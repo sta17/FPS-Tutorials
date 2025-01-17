@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemCategory" load_steps=2 format=3 uid="uid://2uy7uy8n1juh"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="1_e1aid"]
+
+[resource]
+script = ExtResource("1_e1aid")
+name = "Rare"
+color = Color(0, 0, 1, 1)

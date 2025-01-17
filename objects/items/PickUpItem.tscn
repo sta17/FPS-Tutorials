@@ -1,0 +1,119 @@
+[gd_scene load_steps=11 format=3 uid="uid://1q10djsu0nre"]
+
+[ext_resource type="Script" path="res://objects/items/pickupItem.gd" id="1_33bob"]
+[ext_resource type="Texture2D" uid="uid://cbfsa50bo00tb" path="res://assets/Le Lu's Textures/T_trail12.png" id="2_o242n"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_35f50"]
+height = 0.6
+radius = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4uly"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_o242n")
+albedo_texture_msdf = true
+billboard_mode = 1
+billboard_keep_scale = true
+proximity_fade_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_frgrh"]
+
+[sub_resource type="Curve" id="Curve_nvd34"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.504298, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ttnkr"]
+colors = PackedColorArray(0.996094, 0.910156, 0.351563, 1, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_nvcun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Geometry:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Geometry:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gq4ft"]
+resource_name = "itemIdle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Geometry:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.4, 0), Vector3(0, 0.6, 0), Vector3(0, 0.4, 0), Vector3(0, 0.2, 0), Vector3(0, 0.4, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Geometry:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xs06r"]
+_data = {
+"RESET": SubResource("Animation_nvcun"),
+"itemIdle": SubResource("Animation_gq4ft")
+}
+
+[node name="PickUpItem" type="StaticBody3D"]
+collision_layer = 2
+script = ExtResource("1_33bob")
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("CylinderShape3D_35f50")
+
+[node name="Particles" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447834, 0)
+material_override = SubResource("StandardMaterial3D_c4uly")
+mesh = SubResource("QuadMesh_frgrh")
+direction = Vector3(1, 1, 1)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 1.0
+damping_min = 0.5
+damping_max = 0.5
+scale_amount_min = 0.15
+scale_amount_max = 0.15
+scale_amount_curve = SubResource("Curve_nvd34")
+color_ramp = SubResource("Gradient_ttnkr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xs06r")
+}
+autoplay = "itemIdle"

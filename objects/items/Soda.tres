@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=6 format=3 uid="uid://yhv0270085uy"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="1_g5l6j"]
+[ext_resource type="Texture2D" uid="uid://b4redh8ku4t3a" path="res://assets/models/Public Domain/Kenney/Kenney Keep/Models/GLB format/soda-can.png" id="2_nlffl"]
+[ext_resource type="Resource" uid="uid://nd13i8lq1uuj" path="res://objects/items/item Categories/Item Ranks/Misc.tres" id="3_10up2"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory_item.gd" id="3_k60tj"]
+[ext_resource type="Resource" uid="uid://klwoptfvmcpv" path="res://objects/items/item Categories/Consumables.tres" id="3_qad1q"]
+
+[resource]
+script = ExtResource("3_k60tj")
+id = 0
+max_stack = 10
+name = "Soda Red"
+icon = ExtResource("2_nlffl")
+lore = "Its Soda"
+rank = ExtResource("3_qad1q")
+properties = {
+"dropped_item_model": "res://objects/Modified Assets/Can_B_Red.tscn"
+}
+categories = Array[ExtResource("1_g5l6j")]([ExtResource("3_qad1q"), ExtResource("3_10up2")])

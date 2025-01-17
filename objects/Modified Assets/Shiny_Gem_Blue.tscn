@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx0vwoyfo5uus"]
+
+[ext_resource type="Shader" uid="uid://cu7tlbcciv2ux" path="res://shaders/gem_shader.tres" id="1_y60y1"]
+[ext_resource type="ArrayMesh" uid="uid://casdkaoc144sp" path="res://assets/models/Public Domain/Platformer Game Kit - Dec 2021/Powerups and Pickups/meshes/gem_blue_mesh.res" id="2_j0kmm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hx03r"]
+render_priority = 0
+shader = ExtResource("1_y60y1")
+shader_parameter/AuraColor = Color(1, 0.945098, 1, 0.490196)
+shader_parameter/AuraIntensity = 3.0
+shader_parameter/Speed = Vector2(0.1, 0.1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="gem_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+material_overlay = SubResource("ShaderMaterial_hx03r")
+mesh = ExtResource("2_j0kmm")

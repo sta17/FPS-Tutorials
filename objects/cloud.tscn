@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy017k58p20sk"]
+
+[ext_resource type="PackedScene" uid="uid://cs3l7qmhvr3r1" path="res://assets/models/Public Domain/Kenney/Starter Kits/cloud.glb" id="1_pjiy0"]
+[ext_resource type="Script" path="res://scripts/cloud.gd" id="2_hugjq"]
+
+[node name="cube" instance=ExtResource("1_pjiy0")]
+script = ExtResource("2_hugjq")

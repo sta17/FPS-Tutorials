@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=7 format=3 uid="uid://cymey3vniyice"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="1_ax4qc"]
+[ext_resource type="Resource" uid="uid://nd13i8lq1uuj" path="res://objects/items/item Categories/Item Ranks/Misc.tres" id="2_437g8"]
+[ext_resource type="Texture2D" uid="uid://cis4llcmio5bt" path="res://assets/Icons/Buch's RPG Items/bottle.png" id="2_nmcuq"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory_item.gd" id="3_2j5m0"]
+[ext_resource type="Resource" uid="uid://klwoptfvmcpv" path="res://objects/items/item Categories/Consumables.tres" id="3_6tktl"]
+[ext_resource type="Resource" uid="uid://dnyj2dvs18mo5" path="res://objects/items/item Categories/Item Ranks/Uncommon.tres" id="3_x24x2"]
+
+[resource]
+script = ExtResource("3_2j5m0")
+id = 1
+max_stack = 10
+name = "Bottle"
+icon = ExtResource("2_nmcuq")
+lore = "A Common Medicine"
+rank = ExtResource("3_x24x2")
+properties = {
+"dropped_item_model": "res://objects/Modified Assets/Shiny Gem.tscn"
+}
+categories = Array[ExtResource("1_ax4qc")]([ExtResource("2_437g8"), ExtResource("3_6tktl")])

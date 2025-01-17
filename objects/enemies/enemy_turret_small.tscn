@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjg5bcp8y1wew"]
+
+[ext_resource type="Script" path="res://objects/enemies/enemy.gd" id="1_76yh0"]
+[ext_resource type="PackedScene" uid="uid://dfcymo303vtgw" path="res://assets/models/Public Domain/Kenney/Space/turret_single_2_base.tscn" id="2_uf2o0"]
+[ext_resource type="PackedScene" uid="uid://bb2fsoicxlo4u" path="res://assets/models/Public Domain/Kenney/Space/turret_single_2_head.tscn" id="3_rbe3m"]
+[ext_resource type="SpriteFrames" uid="uid://dbv3sy5qjatnl" path="res://assets/sprites/burst_animation.tres" id="3_w4rrv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_iix87"]
+radius = 0.75
+
+[node name="enemy-turret-small" type="Area3D" node_paths=PackedStringArray("raycast", "muzzle_a", "muzzle_b", "model")]
+script = ExtResource("1_76yh0")
+RotSpeedX = 0.0
+raycast = NodePath("RotationPoint/RayCast")
+muzzle_a = NodePath("RotationPoint/MuzzleA")
+muzzle_b = NodePath("RotationPoint/MuzzleB")
+model = NodePath("RotationPoint")
+
+[node name="RotationPoint" type="Node3D" parent="."]
+
+[node name="RayCast" type="RayCast3D" parent="RotationPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, 0, 5)
+
+[node name="MuzzleA" type="AnimatedSprite3D" parent="RotationPoint"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.1, 0.5, 0.4)
+sprite_frames = ExtResource("3_w4rrv")
+frame = 2
+
+[node name="MuzzleB" type="AnimatedSprite3D" parent="RotationPoint"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.09, 0.5, 0.4)
+sprite_frames = ExtResource("3_w4rrv")
+frame = 2
+
+[node name="turret_single_head" parent="RotationPoint" instance=ExtResource("3_rbe3m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="turret_single_base" parent="." instance=ExtResource("2_uf2o0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+visible = false
+shape = SubResource("SphereShape3D_iix87")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

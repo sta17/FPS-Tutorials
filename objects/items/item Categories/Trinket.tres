@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemCategory" load_steps=3 format=3 uid="uid://8nt86h4by03c"]
+
+[ext_resource type="Texture2D" uid="uid://dy5ennvf2c2fb" path="res://assets/Icons/Stevens/UI/Ring.png" id="1_63s2u"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="2_ajgts"]
+
+[resource]
+script = ExtResource("2_ajgts")
+name = "Trinket"
+color = Color(1, 1, 1, 1)
+icon = ExtResource("1_63s2u")

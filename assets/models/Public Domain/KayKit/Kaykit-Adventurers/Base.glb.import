@@ -1,0 +1,90 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dgeqxc0243vkq"
+path="res://.godot/imported/Base.glb-cdf53e74701893e308b29352c468c4e6.scn"
+
+[deps]
+
+source_file="res://assets/models/Public Domain/KayKit/Kaykit-Adventurers/Base.glb"
+dest_files=["res://.godot/imported/Base.glb-cdf53e74701893e308b29352c468c4e6.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Rig/Skeleton3D": {
+"rest_pose/external_animation_library": null
+},
+"PATH:Rig/Skeleton3D/1H_Wand": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/1H_Wand/1H_Wand": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/2H_Staff/2H_Staff": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_ArmLeft": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_ArmRight": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_Body": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_Cape": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_Cape/Mage_Cape": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_Hat": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_Hat/Mage_Hat": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_Head": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_LegLeft": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Mage_LegRight": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Spellbook/Spellbook": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Spellbook_open": {
+"import/skip_import": true
+},
+"PATH:Rig/Skeleton3D/Spellbook_open/Spellbook_open": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

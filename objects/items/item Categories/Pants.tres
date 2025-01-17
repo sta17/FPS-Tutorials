@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemCategory" load_steps=3 format=3 uid="uid://vuroxc2gjhyu"]
+
+[ext_resource type="Texture2D" uid="uid://cmlji1t241wpj" path="res://assets/Icons/Stevens/UI/Pants.png" id="1_sb0je"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="2_22o20"]
+
+[resource]
+script = ExtResource("2_22o20")
+name = "Pants"
+color = Color(1, 1, 1, 1)
+icon = ExtResource("1_sb0je")

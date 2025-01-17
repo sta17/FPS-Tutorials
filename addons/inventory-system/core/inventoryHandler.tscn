@@ -1,0 +1,94 @@
+[gd_scene load_steps=27 format=3 uid="uid://dpmygvk0mwapm"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory_handler.gd" id="1_5gwgh"]
+[ext_resource type="Resource" uid="uid://bl8xujlnad0mw" path="res://objects/items/database.tres" id="2_ckk23"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory.gd" id="2_p0hf6"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/hotbar.gd" id="3_p8d6j"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/slot.gd" id="5_5tcay"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="6_0kyaq"]
+[ext_resource type="Resource" uid="uid://cjfoegl57ece7" path="res://objects/items/item Categories/MainHand.tres" id="6_u4wu0"]
+[ext_resource type="Resource" uid="uid://dhinqq0melrsh" path="res://objects/items/item Categories/weapons.tres" id="7_f1l0f"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/CategorizedSlot.gd" id="8_nrpgy"]
+[ext_resource type="Resource" uid="uid://drpbw1ydhbujt" path="res://objects/items/item Categories/OffHand.tres" id="9_qlftl"]
+[ext_resource type="Resource" uid="uid://cmspu8poxd67w" path="res://objects/items/item Categories/Shield.tres" id="10_2xusl"]
+[ext_resource type="Resource" uid="uid://b7hgmii8pvk3o" path="res://objects/items/item Categories/Boots.tres" id="11_vqfd0"]
+[ext_resource type="Resource" uid="uid://yndhpfi3yh12" path="res://objects/items/item Categories/Chest.tres" id="12_ekaai"]
+[ext_resource type="Resource" uid="uid://cag8woy01ixpr" path="res://objects/items/item Categories/Gloves.tres" id="13_6q4st"]
+[ext_resource type="Resource" uid="uid://yej5syrwx6r6" path="res://objects/items/item Categories/Helmet.tres" id="14_xea2b"]
+[ext_resource type="Resource" uid="uid://vuroxc2gjhyu" path="res://objects/items/item Categories/Pants.tres" id="15_qni84"]
+[ext_resource type="Resource" uid="uid://8nt86h4by03c" path="res://objects/items/item Categories/Trinket.tres" id="16_uijnh"]
+
+[sub_resource type="Resource" id="Resource_du4s0"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("6_u4wu0"), ExtResource("7_f1l0f")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_eyxh0"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("9_qlftl"), ExtResource("10_2xusl")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_5vxg0"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("11_vqfd0")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_a22e0"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("12_ekaai")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_ga6fh"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("13_6q4st")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_sw5yb"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("14_xea2b")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_unb11"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("15_qni84")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_6hlhv"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("16_uijnh")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_6h4ha"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("16_uijnh")])
+amount = 0
+max_stack = -1
+
+[node name="InventoryHandler" type="Node"]
+script = ExtResource("1_5gwgh")
+database = ExtResource("2_ckk23")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("2_p0hf6")
+database = ExtResource("2_ckk23")
+
+[node name="Equipment" type="Node" parent="."]
+script = ExtResource("2_p0hf6")
+slots = Array[ExtResource("5_5tcay")]([SubResource("Resource_du4s0"), SubResource("Resource_eyxh0"), SubResource("Resource_5vxg0"), SubResource("Resource_a22e0"), SubResource("Resource_ga6fh"), SubResource("Resource_sw5yb"), SubResource("Resource_unb11"), SubResource("Resource_6hlhv"), SubResource("Resource_6h4ha")])
+slot_amount = 1
+inventory_name = "Equipment"
+recreate_slots_on_ready = false
+database = ExtResource("2_ckk23")
+
+[node name="Hotbar" type="Node" parent="." node_paths=PackedStringArray("inventory")]
+script = ExtResource("3_p8d6j")
+inventory = NodePath("../Inventory")
+database = ExtResource("2_ckk23")

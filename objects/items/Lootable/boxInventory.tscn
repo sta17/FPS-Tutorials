@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwxptvnk6qiql"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/boxInventory.gd" id="1_83rxb"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory.gd" id="2_0xbgf"]
+[ext_resource type="Resource" uid="uid://bl8xujlnad0mw" path="res://objects/items/database.tres" id="3_trnwh"]
+[ext_resource type="PackedScene" uid="uid://b130057yqhw5g" path="res://assets/models/Public Domain/Kenney/Kenney Keep/Models/GLB format/box-open.glb" id="4_xdd10"]
+[ext_resource type="PackedScene" uid="uid://cnsr442ap17r5" path="res://assets/models/Public Domain/Kenney/Kenney Keep/Models/GLB format/box.glb" id="5_xvs8g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mqee5"]
+
+[node name="Box Inventory" type="StaticBody3D"]
+collision_layer = 7
+script = ExtResource("1_83rxb")
+labelText = "Chest"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_mqee5")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("2_0xbgf")
+database = ExtResource("3_trnwh")
+
+[node name="boxOpen" parent="." instance=ExtResource("4_xdd10")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.5, 0)
+visible = false
+
+[node name="box" parent="." instance=ExtResource("5_xvs8g")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.5, 0)
+
+[connection signal="closed" from="Inventory" to="." method="_on_inventory_closed"]
+[connection signal="opened" from="Inventory" to="." method="_on_inventory_opened"]

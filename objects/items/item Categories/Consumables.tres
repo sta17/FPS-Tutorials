@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemCategory" load_steps=2 format=3 uid="uid://klwoptfvmcpv"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="1_wneq8"]
+
+[resource]
+script = ExtResource("1_wneq8")
+name = "Consumables"
+color = Color(0.529412, 0.807843, 0.921569, 1)

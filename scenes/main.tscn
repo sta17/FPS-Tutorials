@@ -1,14 +1,68 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=67 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
-[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
+[ext_resource type="PackedScene" uid="uid://djaxaoe1t3rry" path="res://objects/CameraAndCharacterSystems/First Person/player.tscn" id="2_elriq"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="3_s8mkj"]
-[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://fonts/lilita_one_regular.ttf" id="3_w27de"]
+[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://assets/fonts/lilita_one_regular.ttf" id="3_w27de"]
 [ext_resource type="PackedScene" uid="uid://dpm3l05d7fu35" path="res://objects/platform.tscn" id="5_3s40e"]
-[ext_resource type="PackedScene" uid="uid://r7rt7pth4u7o" path="res://objects/wall_low.tscn" id="5_6vel1"]
-[ext_resource type="PackedScene" uid="uid://c71evdjblk5wp" path="res://objects/wall_high.tscn" id="7_cabne"]
+[ext_resource type="PackedScene" uid="uid://r7rt7pth4u7o" path="res://objects/terrain/wall_low.tscn" id="5_6vel1"]
+[ext_resource type="PackedScene" uid="uid://l8u16sjn0fng" path="res://addons/inventory-system/ui/inventorySystemUI.tscn" id="6_26yhh"]
+[ext_resource type="PackedScene" uid="uid://c71evdjblk5wp" path="res://objects/terrain/wall_high.tscn" id="7_cabne"]
+[ext_resource type="Script" path="res://scripts/cursor_looks.gd" id="7_qh1eu"]
 [ext_resource type="PackedScene" uid="uid://bvx5cvigosg0s" path="res://objects/platform_large_grass.tscn" id="7_wggef"]
-[ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://objects/enemy.tscn" id="8_7ty2f"]
+[ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://objects/enemies/enemy.tscn" id="8_7ty2f"]
+[ext_resource type="Texture2D" uid="uid://r0iwsaulp5vx" path="res://assets/unity Assets/Cursors 64/Arrow.png" id="8_mloe6"]
+[ext_resource type="Texture2D" uid="uid://p7fseblf0e1g" path="res://assets/unity Assets/Cursors 64/Arrow_Loot.png" id="9_5n6eh"]
+[ext_resource type="Texture2D" uid="uid://dtd3oymkgn5q0" path="res://assets/unity Assets/Cursors 64/Cursor_book.png" id="10_0rv22"]
+[ext_resource type="Texture2D" uid="uid://cg8lf2xmpwxog" path="res://assets/unity Assets/Cursors 64/Cursor_Flask.png" id="11_ehf8a"]
+[ext_resource type="PackedScene" uid="uid://b02u8pl515das" path="res://prefabs/platform_grass_large_round_prefab.tscn" id="12_e4ejy"]
+[ext_resource type="Texture2D" uid="uid://bd1g6n5t32f57" path="res://assets/unity Assets/Cursors 64/Cursor_Settings.png" id="12_q7mdo"]
+[ext_resource type="Texture2D" uid="uid://shx4k78e02cx" path="res://assets/unity Assets/Cursors 64/Arrow_Cross_Smaller.png" id="13_0rf5d"]
+[ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://objects/platform_falling.tscn" id="13_kabyr"]
+[ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://objects/cloud.tscn" id="13_w7pdv"]
+[ext_resource type="Texture2D" uid="uid://cl7p2xb31q12g" path="res://assets/unity Assets/Cursors 64/Arrow_Compass.png" id="14_gfpd5"]
+[ext_resource type="PackedScene" uid="uid://brv2pft5qcu5k" path="res://objects/terrain/terrain_Mars.tscn" id="15_urcft"]
+[ext_resource type="PackedScene" uid="uid://c63plgub1qewh" path="res://assets/models/Public Domain/Kenney/Space/barrel.glb" id="16_fl4e0"]
+[ext_resource type="PackedScene" uid="uid://dmecrlue8eoxf" path="res://objects/enemies/enemy_turret_big.tscn" id="17_hj0io"]
+[ext_resource type="PackedScene" uid="uid://drlkfxk5x484n" path="res://assets/models/Public Domain/Kenney/Space/barrels.glb" id="17_yi16f"]
+[ext_resource type="PackedScene" uid="uid://bul6b5bvb567j" path="res://assets/models/Public Domain/Kenney/Space/corridor_open.glb" id="18_2ghf6"]
+[ext_resource type="PackedScene" uid="uid://bw6vqolsd6ld1" path="res://assets/models/Public Domain/Kenney/Space/corridor_roof.glb" id="19_xbxcy"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/slot.gd" id="20_1axc8"]
+[ext_resource type="PackedScene" uid="uid://b1i7fwoahf4ll" path="res://assets/models/Public Domain/Kenney/Space/corridor_wall.glb" id="20_mywvu"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="21_iit27"]
+[ext_resource type="PackedScene" uid="uid://ds26fihg12gpu" path="res://assets/models/Public Domain/Kenney/Space/craterLarge.glb" id="21_rohtv"]
+[ext_resource type="Resource" uid="uid://cjfoegl57ece7" path="res://objects/items/item Categories/MainHand.tres" id="22_g4fjy"]
+[ext_resource type="PackedScene" uid="uid://cuvmxcexvcxem" path="res://objects/terrain/terrain_Inside.tscn" id="22_w57xg"]
+[ext_resource type="PackedScene" uid="uid://dkaw7p2odl0xy" path="res://assets/models/Public Domain/Kenney/Space/desk_computerScreen.glb" id="22_wu8me"]
+[ext_resource type="PackedScene" uid="uid://cx1wf48cav2gr" path="res://assets/models/Public Domain/Kenney/Space/hangar_roundGlass.glb" id="23_naf72"]
+[ext_resource type="Resource" uid="uid://c8iatjwh0fjvw" path="res://objects/items/grand Sword.tres" id="23_xfcsj"]
+[ext_resource type="PackedScene" uid="uid://dw4dcmbjs5kyj" path="res://assets/models/Public Domain/Kenney/Space/meteor_detailed.glb" id="24_32gyu"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/CategorizedSlot.gd" id="24_wejp3"]
+[ext_resource type="PackedScene" uid="uid://h25prbf11d8e" path="res://assets/models/Public Domain/Kenney/Space/rock.glb" id="25_ke6e1"]
+[ext_resource type="PackedScene" uid="uid://chwdhv2h0io5r" path="res://assets/models/Public Domain/Kenney/Space/rover.glb" id="26_5ldlr"]
+[ext_resource type="Resource" uid="uid://yhv0270085uy" path="res://objects/items/Soda.tres" id="27_dnni5"]
+[ext_resource type="PackedScene" uid="uid://gytgi5g5pigf" path="res://assets/models/Public Domain/Kenney/Space/satelliteDish.glb" id="27_man2o"]
+[ext_resource type="PackedScene" uid="uid://dc6yqto5ygts8" path="res://assets/models/Public Domain/Kenney/Space/satelliteDish_detailed.glb" id="28_7jmco"]
+[ext_resource type="Resource" uid="uid://47wshjq2btfg" path="res://objects/items/Soda Blue.tres" id="29_sr10g"]
+[ext_resource type="PackedScene" uid="uid://dj563yw1sg3nb" path="res://assets/models/Public Domain/Kenney/Space Station/container-tall.glb" id="32_4gymm"]
+[ext_resource type="Resource" uid="uid://dhinqq0melrsh" path="res://objects/items/item Categories/weapons.tres" id="32_vyuh6"]
+[ext_resource type="PackedScene" uid="uid://d1fu5p177b0e7" path="res://assets/models/Public Domain/Kenney/Space Station/container-flat.glb" id="33_xdsqv"]
+[ext_resource type="PackedScene" uid="uid://dcmy3nhreojo2" path="res://assets/models/Public Domain/Kenney/Space Station/computer-screen.glb" id="34_e1r55"]
+[ext_resource type="PackedScene" uid="uid://dvdj2jofj7gk1" path="res://assets/models/Public Domain/Kenney/Space Station/computer-system.glb" id="35_47tyd"]
+[ext_resource type="PackedScene" uid="uid://drir450dfu2gs" path="res://assets/models/Public Domain/Kenney/Space Station/chair-cushion-headrest.glb" id="36_gql5l"]
+[ext_resource type="PackedScene" uid="uid://cs1r0ux0473us" path="res://assets/models/Public Domain/Kenney/Space Station/container.glb" id="37_wl4jc"]
+[ext_resource type="PackedScene" uid="uid://cug1dymn2t26l" path="res://assets/models/Public Domain/Kenney/Space Station/wall-door-edge.glb" id="38_0jddy"]
+[ext_resource type="PackedScene" uid="uid://d05mvphol4ufs" path="res://assets/models/Public Domain/Kenney/Space Station/wall-pillar.glb" id="39_tc28e"]
+[ext_resource type="PackedScene" uid="uid://1tdna3vuu46q" path="res://assets/models/Public Domain/Kenney/Space Station/wall.glb" id="40_e6rhv"]
+[ext_resource type="PackedScene" uid="uid://blj0ok756kpp0" path="res://assets/models/Public Domain/Kenney/Space Station/table-display.glb" id="41_jljst"]
+[ext_resource type="PackedScene" uid="uid://dm0a72ksk8jqd" path="res://assets/models/Public Domain/Kenney/Space Station/table-display-small.glb" id="42_0xuga"]
+[ext_resource type="PackedScene" uid="uid://bvr4rb6slptie" path="res://assets/models/Public Domain/Kenney/Space Station/floor-detail.glb" id="43_1plwu"]
+[ext_resource type="PackedScene" uid="uid://dromrrrcyyc7k" path="res://assets/models/Public Domain/Kenney/Space Station/floor-panel-corner.glb" id="44_aweg0"]
+[ext_resource type="PackedScene" uid="uid://b6f1o0lbkgdaf" path="res://assets/models/Public Domain/Kenney/Space Station/floor-panel-straight.glb" id="45_3f2w3"]
+[ext_resource type="PackedScene" uid="uid://cjg5bcp8y1wew" path="res://objects/enemies/enemy_turret_small.tscn" id="46_tvi46"]
+[ext_resource type="PackedScene" uid="uid://1q10djsu0nre" path="res://objects/items/PickUpItem.tscn" id="47_v7lcc"]
+[ext_resource type="Resource" uid="uid://cymey3vniyice" path="res://objects/items/bottle.tres" id="48_tf50y"]
+[ext_resource type="PackedScene" uid="uid://bwxptvnk6qiql" path="res://objects/items/Lootable/boxInventory.tscn" id="50_wengo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
 font = ExtResource("3_w27de")
@@ -16,18 +70,33 @@ font_size = 36
 outline_size = 12
 outline_color = Color(0, 0, 0, 0.470588)
 
+[sub_resource type="Resource" id="Resource_w4b2a"]
+script = ExtResource("24_wejp3")
+accepted_categories = Array[ExtResource("21_iit27")]([ExtResource("22_g4fjy"), ExtResource("32_vyuh6")])
+item = ExtResource("23_xfcsj")
+amount = 1
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_hnfxu"]
+script = ExtResource("24_wejp3")
+accepted_categories = Array[ExtResource("21_iit27")]([ExtResource("22_g4fjy"), ExtResource("32_vyuh6")])
+amount = 0
+max_stack = -1
+
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_q8fpv")
 
-[node name="Player" parent="." node_paths=PackedStringArray("crosshair") instance=ExtResource("2_elriq")]
-crosshair = NodePath("../HUD/Crosshair")
-
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 6.51876, 0)
 shadow_enabled = true
 shadow_opacity = 0.75
+
+[node name="Player" parent="." node_paths=PackedStringArray("crosshair") instance=ExtResource("2_elriq")]
+transform = Transform3D(-1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, -2.5, 0.494809, 6.5)
+InventorySystemUI_path = NodePath("../HUD/Inventory System UI")
+crosshair = NodePath("../HUD/Crosshair")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_s8mkj")
@@ -48,15 +117,58 @@ scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(64, 64)
 
 [node name="Health" type="Label" parent="HUD"]
-offset_left = 48.0
-offset_top = 627.0
-offset_right = 138.0
-offset_bottom = 672.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 90.0
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "100%"
 label_settings = SubResource("LabelSettings_fpmwk")
 vertical_alignment = 2
+
+[node name="Inventory System UI" parent="HUD" node_paths=PackedStringArray("player") instance=ExtResource("6_26yhh")]
+player = NodePath("../../Player")
+
+[node name="InteractMessagePosition" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractMessage" type="Label" parent="HUD/InteractMessagePosition"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "E - Open Loot"
+label_settings = SubResource("LabelSettings_fpmwk")
+vertical_alignment = 2
+
+[node name="Cursor Looks" type="Node" parent="HUD"]
+script = ExtResource("7_qh1eu")
+default_cursor = ExtResource("8_mloe6")
+coin_cursor = ExtResource("9_5n6eh")
+book_cursor = ExtResource("10_0rv22")
+bottle_cursor = ExtResource("11_ehf8a")
+setting_cursor = ExtResource("12_q7mdo")
+cross_cursor = ExtResource("13_0rf5d")
+compass_cursor = ExtResource("14_gfpd5")
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -69,11 +181,20 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.5, 
 player = NodePath("../../Player")
 
 [node name="enemy-flying3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 5.5, 3.5, 9)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 8.27641, 2.56086, 8.10497)
 player = NodePath("../../Player")
 
 [node name="enemy-flying4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 15.5, 4, -7.5)
+player = NodePath("../../Player")
+
+[node name="enemy-turret-small" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("46_tvi46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.45, 20)
+player = NodePath("../../Player")
+dontboob = true
+
+[node name="enemy-turret-big" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("17_hj0io")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.648, 0.5, 14)
 player = NodePath("../../Player")
 
 [node name="Level" type="Node" parent="."]
@@ -85,7 +206,7 @@ transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 
 transform = Transform3D(-1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, -1, 6.07912, 1.05, 6.59834)
 
 [node name="platform" parent="Level" instance=ExtResource("5_3s40e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0757496, 6.5)
 
 [node name="platform2" parent="Level" instance=ExtResource("5_3s40e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, -2.5)
@@ -103,7 +224,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.5, 4)
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 11.5, 3, -5.5)
 
 [node name="platform-large-grass" parent="Level" instance=ExtResource("7_wggef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.210554, 0)
 
 [node name="platform-large-grass2" parent="Level" instance=ExtResource("7_wggef")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -2, 0.5, -6)
@@ -117,6 +238,220 @@ transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 12, 2.5, -
 [node name="platform-large-grass4" parent="Level" instance=ExtResource("7_wggef")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 5, 0.5, 5.5)
 
+[node name="platform-grass-large-round" parent="Level" instance=ExtResource("12_e4ejy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.78822, 0.0100826, 0.0146744)
+
+[node name="platform-falling" parent="Level" instance=ExtResource("13_kabyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5119, 1.88983, 0.528738)
+
 [node name="Decoration" type="Node" parent="."]
 
+[node name="cube" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(5.61691, 0.879408, 13.8808, 6.96709, 12.7785, -3.62883, -12.0379, 7.80611, 4.3766, -9.485, 8.498, 20.555)
+
+[node name="cube2" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(5.61792, 6.97789, -12.0311, 0.870818, 12.7736, 7.81514, 13.8809, -3.62545, 4.37897, 25.56, 6.352, -12.117)
+
+[node name="cube3" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(11.5451, 4.23332, -8.5901, -0.0942804, 13.5045, 6.52847, 9.57611, -4.97079, 10.4206, 6.411, 6.352, -28.655)
+
+[node name="cube4" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(10.6066, 0, 10.6066, 0, 15, 0, -10.6066, 0, 10.6066, 6.13314, 10.097, 25.398)
+
+[node name="cube5" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(3.88229, -14.4889, 0, 7.24444, 1.94114, -12.9904, 12.5477, 3.36216, 7.5, 27.513, 12.026, -5.372)
+
+[node name="cube6" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(3.36331, 14.4886, -1.94103, -12.5447, 3.88323, 7.24924, 7.5046, -0.00212409, 12.9877, -28.612, 16.3, -4.892)
+
+[node name="cube7" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(3.36331, 14.4886, -1.94103, -12.5447, 3.88323, 7.24924, 7.5046, -0.00212431, 12.9877, -25.14, 8.807, -24.256)
+
+[node name="cube8" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(-12.9871, 7.25252, 1.933, -7.50569, -12.5411, -3.37427, -0.0153344, -3.88869, 14.4872, 14.13, 10.114, 17.535)
+
+[node name="cube9" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(10.6113, -0.0131871, -10.6019, 7.50659, 10.6019, 7.5, 7.48681, -10.6113, 7.50659, -5.111, 2.427, -36.641)
+
+[node name="cube10" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(12.9904, 0, 7.5, 0, 15, 0, -7.5, 0, 12.9904, -30.126, 2.427, -13.734)
+
+[node name="cube11" parent="Decoration" instance=ExtResource("13_w7pdv")]
+transform = Transform3D(5.61181, 6.96438, -12.0418, 7.69221, 9.26531, 8.94337, 11.5904, -9.52111, -0.105087, -0.882, 13.03, -30.186)
+
+[node name="Collectables" type="Node" parent="."]
+
+[node name="PickUpItem" parent="Collectables" instance=ExtResource("47_v7lcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.517615, 0.710554, -1.56774)
+item = ExtResource("48_tf50y")
+autoCollect = true
+amount = 2
+
+[node name="PickUpItem2" parent="Collectables" instance=ExtResource("47_v7lcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68727, 0.710554, -0.56774)
+item = ExtResource("48_tf50y")
+amount = 2
+
+[node name="PickUpItem3" parent="Collectables" instance=ExtResource("47_v7lcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68727, 0.710554, 1.01749)
+item = ExtResource("27_dnni5")
+amount = 2
+
+[node name="PickUpItem4" parent="Collectables" instance=ExtResource("47_v7lcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68727, 0.710554, 2.00004)
+item = ExtResource("29_sr10g")
+amount = 2
+
+[node name="Box Inventory" parent="Collectables" instance=ExtResource("50_wengo")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 14)
+
+[node name="Weapons Box" parent="Collectables" instance=ExtResource("50_wengo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 18)
+labelText = "Weapons Chest"
+
+[node name="Inventory" parent="Collectables/Weapons Box" index="1"]
+slots = Array[ExtResource("20_1axc8")]([SubResource("Resource_w4b2a"), SubResource("Resource_hnfxu")])
+inventory_name = "Weapons Chest"
+recreate_slots_on_ready = false
+
+[node name="Land" type="Node" parent="."]
+
+[node name="meteor_detailed2" parent="Land" instance=ExtResource("24_32gyu")]
+transform = Transform3D(0.820192, 0, 0.572089, 0, 1, 0, -0.572089, 0, 0.820192, -7.31935, 0.255569, 14.4856)
+
+[node name="rock2" parent="Land" instance=ExtResource("25_ke6e1")]
+transform = Transform3D(0.812857, 0, 0.582464, 0, 1, 0, -0.582464, 0, 0.812857, -2.4893, 0.498182, 10.2738)
+
+[node name="rover2" parent="Land" instance=ExtResource("26_5ldlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13508, 0.498182, 13.3638)
+
+[node name="satelliteDish2" parent="Land" instance=ExtResource("27_man2o")]
+transform = Transform3D(0.786741, 0, -0.617283, 0, 1, 0, 0.617283, 0, 0.786741, 0.630716, 0.498182, 8.75496)
+
+[node name="satelliteDish_detailed2" parent="Land" instance=ExtResource("28_7jmco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.00952, 0.498182, 8.67305)
+
+[node name="floor2" parent="Land" instance=ExtResource("22_w57xg")]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, -2.5, 0.2, 18.5)
+
+[node name="floor4" parent="Land" instance=ExtResource("22_w57xg")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 6, -7, 0.2, 18.5)
+
+[node name="floor3" parent="Land" instance=ExtResource("22_w57xg")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 6, 1.5, 0.145244, 18.5)
+
+[node name="terrain3" parent="Land" instance=ExtResource("15_urcft")]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, -2.5, 0.5, -4.5)
+
+[node name="barrel2" parent="Land" instance=ExtResource("16_fl4e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44788, 0.601784, 10.5152)
+
+[node name="barrels2" parent="Land" instance=ExtResource("17_yi16f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39247, 0.541627, 13.457)
+
+[node name="corridor_open2" parent="Land" instance=ExtResource("18_2ghf6")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.5, 0.5, 13.2531)
+
+[node name="corridor_roof2" parent="Land" instance=ExtResource("19_xbxcy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.5, 2, 13.2531)
+
+[node name="corridor_wall2" parent="Land" instance=ExtResource("20_mywvu")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -3.48424, 0.498182, 20.3536)
+
+[node name="corridor_wall4" parent="Land" instance=ExtResource("20_mywvu")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -1.5, 0.5, 20.354)
+
+[node name="corridor_wall5" parent="Land" instance=ExtResource("20_mywvu")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -9.5, 0.5, 20.354)
+
+[node name="corridor_wall6" parent="Land" instance=ExtResource("20_mywvu")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -11.4956, 0.5, 20.354)
+
+[node name="corridor_wall3" parent="Land" instance=ExtResource("20_mywvu")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -7.50639, 0.498182, 20.3536)
+
+[node name="craterLarge2" parent="Land" instance=ExtResource("21_rohtv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13217, 0.498182, 8.73358)
+
+[node name="craterLarge3" parent="Land" instance=ExtResource("21_rohtv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49329, 0.498182, 10.5972)
+
+[node name="desk_computerScreen2" parent="Land" instance=ExtResource("22_wu8me")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -0.37, 0.5, 12.2421)
+
+[node name="hangar_roundGlass2" parent="Land" instance=ExtResource("23_naf72")]
+transform = Transform3D(0.817215, 0, 0.576333, 0, 1, 0, -0.576333, 0, 0.817215, -8.52013, 0.498182, 12.2083)
+
+[node name="container-tall2" parent="Land" instance=ExtResource("32_4gymm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.985539, 0.5, 16.021)
+
+[node name="container-flat2" parent="Land" instance=ExtResource("33_xdsqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.205946, 0.5, 16.2302)
+
+[node name="computer-screen2" parent="Land" instance=ExtResource("34_e1r55")]
+transform = Transform3D(0.916223, 0, -0.400669, 0, 1, 0, 0.400669, 0, 0.916223, -4.12418, 0.5, 16.216)
+
+[node name="computer-system2" parent="Land" instance=ExtResource("35_47tyd")]
+transform = Transform3D(-0.029893, 0, 0.999553, 0, 1, 0, -0.999553, 0, -0.029893, -1.39357, 0.5, 17.7713)
+
+[node name="chair-cushion-headrest2" parent="Land" instance=ExtResource("36_gql5l")]
+transform = Transform3D(0.587319, 0, -0.809355, 0, 1, 0, 0.809355, 0, 0.587319, -0.45074, 0.531693, 17.0867)
+
+[node name="container2" parent="Land" instance=ExtResource("37_wl4jc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20996, 0.442654, 18.7095)
+
+[node name="wall-door-edge2" parent="Land" instance=ExtResource("38_0jddy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4, 0.5, 21)
+
+[node name="wall-door-edge3" parent="Land" instance=ExtResource("38_0jddy")]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -2, 0.5, 21)
+
+[node name="wall-pillar2" parent="Land" instance=ExtResource("39_tc28e")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 0.5, 21)
+
+[node name="wall-pillar3" parent="Land" instance=ExtResource("39_tc28e")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 21)
+
+[node name="wall2" parent="Land" instance=ExtResource("40_e6rhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8, 0.5, 21)
+
+[node name="wall3" parent="Land" instance=ExtResource("40_e6rhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0.5, 21)
+
+[node name="table-display2" parent="Land" instance=ExtResource("41_jljst")]
+transform = Transform3D(-0.0468275, 0, 0.998903, 0, 1, 0, -0.998903, 0, -0.0468275, -5, 0.8, 20)
+
+[node name="table-display-small2" parent="Land" instance=ExtResource("42_0xuga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04895, 0.786982, 16.0805)
+
+[node name="floor-detail2" parent="Land" instance=ExtResource("43_1plwu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.2, 20)
+
+[node name="floor-panel-corner2" parent="Land" instance=ExtResource("44_aweg0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0.2, 19)
+
+[node name="floor-panel-corner3" parent="Land" instance=ExtResource("44_aweg0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0.2, 19)
+
+[node name="floor-panel-straight2" parent="Land" instance=ExtResource("45_3f2w3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0.2, 18)
+
+[node name="floor-panel-straight3" parent="Land" instance=ExtResource("45_3f2w3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0.2, 18)
+
+[node name="floor-panel-corner4" parent="Land" instance=ExtResource("44_aweg0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0.2, 16)
+
+[node name="floor-panel-corner5" parent="Land" instance=ExtResource("44_aweg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.2, 16)
+
+[node name="floor-panel-straight4" parent="Land" instance=ExtResource("45_3f2w3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0.2, 17)
+
+[node name="floor-panel-straight5" parent="Land" instance=ExtResource("45_3f2w3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0.2, 17)
+
 [connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
+[connection signal="opened_inventory_ui" from="HUD/Inventory System UI" to="Player" method="_on_inventory_system_ui_opened_inventory_ui"]
+
+[editable path="Collectables/Weapons Box"]
