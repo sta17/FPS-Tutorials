@@ -1,5 +1,3 @@
-<p align="center"><img src="icon.png"/></p>
-
 # Starter Kit FPS
 
 This package includes a basic template for a first person shooter in Godot 4.1.1.stable.official. Includes features like;
@@ -8,10 +6,6 @@ This package includes a basic template for a first person shooter in Godot 4.1.1
 - Weapons, switching weapons
 - Enemies
 - Sprites and 3D Models _(CC0 licensed)_
-
-### Screenshot
-
-<p align="center"><img src="screenshots/screenshot.png"/></p>
 
 ### Controls
 
@@ -23,6 +17,8 @@ This package includes a basic template for a first person shooter in Godot 4.1.1
 | <kbd>E</kbd> | Switch weapon |
 
 ### License
+
+Based on Kenneys, 
 
 MIT License
 
